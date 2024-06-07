@@ -1,0 +1,14 @@
+{
+  "name": "cypress_jsautomation",
+  "version": "1.0.0",
+  "description": "1. Run the test_cy.js in visual code terminal with following command \r 3. Setting up new npm package: npm init\r 4. Install cypress: npm install cypress\r 5. Check the version of cypress: npx cypress -v\r 6. Open Cypress GUI: npx cypress open",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.11.0"
+  }
+}
