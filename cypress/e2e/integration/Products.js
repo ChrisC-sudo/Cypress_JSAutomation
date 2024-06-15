@@ -1,8 +1,8 @@
-/// <reference types = "Cypress" />
+// /// <reference types = "Cypress" />
 
-describe('Add Products into Carts', function(){
+// describe('Add Products into Carts', function(){
     
-    it('Add Products', function(){
+//     it('Add Products', function(){
         
-    })
-})
+//     })
+// })
