@@ -47,7 +47,22 @@ describe('Practicing elements', function () {
     })
 
     it.only("Calendar Verification", function(){
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        const Date= '14';
+        const Month = '9';
+        const Year = '2023';
+        const ExpectedList = [Month,Date,Year];
+        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+        cy.get(".react-date-picker__inputGroup").click();
+        cy.get(".react-calendar__navigation__label__labelText").click();
+        cy.get(".react-calendar__navigation__label__labelText").click();
+        cy.contains('button[type="button"]',Year).click();
+        cy.get(".react-calendar__year-view__months button").eq(Number(Month-1)).click();
+        cy.get('.react-calendar__tile').contains(Date).click();
+
+        cy.get(".react-date-picker__inputGroup__input").each(($el,index,$list)=>
+            {
+                cy.wrap($el).invoke('val').should('eq',ExpectedList[index])
+            })
 
     })
 
