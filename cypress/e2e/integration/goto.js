@@ -3,7 +3,8 @@
 
 describe("Test suite for automation practice", function(){
 
-  it("First test case", ()=>{
+  it("First test case", function()
+  {
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
     cy.get("h1").should('have.text',"Practice Page");
     cy.title().should('eq', 'Practice Page')
@@ -14,14 +15,9 @@ describe("Test suite for automation practice", function(){
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
     cy.get("#displayed-text").type("Chris");
     cy.get("#hide-textbox").click();
-    cy.wait(5000);
     cy.get("#displayed-text").should("not.be.visible");
-    cy.wait(5000);
     cy.get("#show-textbox").click();
-    cy.wait(5000);
     cy.get("#displayed-text").should("be.visible");
-    cy.wait(5000);
-    
   })
 
 it("Iteration thru the same element name",function()
@@ -34,14 +30,14 @@ it("Iteration thru the same element name",function()
         {
           cy.wrap($el).click()
         }
-    });
-  });
-});
-
-it.only("promise test", function()
-{
-  cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
-  cy.get(".logoClass").then(function(logoelement){
-    cy.wrap(logoelement).click();
+    })
   })
-})
+
+  it("promise test", function()
+  {
+    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.get(".logoClass").then(function(logoelement){
+      cy.wrap(logoelement).click();
+    })
+  })
+}); 
