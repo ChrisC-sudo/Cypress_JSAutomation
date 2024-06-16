@@ -38,11 +38,16 @@ describe('Practicing elements', function () {
             } 
         })
     })
-    it.only("Handling frames", function(){
+    it("Handling frames", function(){
         // cy.visit(Cypress.env('url'));
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
         cy.frameLoaded("#courses-iframe");
-        // cy.iframe().
+        cy.iframe().find("a[href='consulting']").eq(0).click();
+
+    })
+
+    it.only("Calendar Verification", function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
 
     })
 
