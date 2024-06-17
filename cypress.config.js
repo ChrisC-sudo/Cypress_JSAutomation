@@ -1,23 +1,18 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
     setupNodeEvents(on, config) {
-      require('@cypress/code-coverage/task')(on, config)
-
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
       return config
     },
-    specPattern: 'cypress/e2e/integration/*.js',
+    specPattern: 'cypress/e2e/integration/*.js'
   },
-  env: {
-    coverageFolder: "coverage",
-    nyc: {
-      "report-dir": "coverage",
-      reporter: [
-        "text-summary",
-        "html"
-      ]
-    }
+  env:{
+    url:"https://rahulshettyacademy.com/"
+  },
+  retries:{
+    runMode : 1,
   }
 });
