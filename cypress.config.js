@@ -8,6 +8,16 @@ module.exports = defineConfig({
       // implement node event listeners here
       return config
     },
-    specPattern: 'cypress/e2e/integration/*.js'
+    specPattern: 'cypress/e2e/integration/*.js',
   },
+  env: {
+    coverageFolder: "coverage",
+    nyc: {
+      "report-dir": "coverage",
+      reporter: [
+        "text-summary",
+        "html"
+      ]
+    }
+  }
 });
