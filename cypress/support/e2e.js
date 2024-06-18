@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import 'cypress-mochawesome-reporter/register';
+// import '@cypress/code-coverage/support';
 // cypress/support/e2e.js
 
 // Alternatively you can use CommonJS syntax:
